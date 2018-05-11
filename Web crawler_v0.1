@@ -1,7 +1,7 @@
 # Write Python code that find the all url on the page
 # page = contents of a web page
 
-page =('<div id="top_bin"><div id="top_content" class="width960">'
+page =('<div id="top_bin"><a href="http://udacity.com"><div id="top_content" class="width960">'
 '<div class="udacity float-left"><a href="http://udacity.com">')
 
 def get_next_target(page):
@@ -18,9 +18,10 @@ def get_next_target(page):
     
 def print_all_link(page):
     while True:
-    url, endpos = get_next_target(page)
-    if url:
-        print url
-        page = [endpos:]
-    else:
-        break
+        url, endpos = get_next_target(page)
+        if url:
+            print url
+            page = page[endpos:]
+        else:
+            break
+print_all_link(page)
