@@ -51,6 +51,17 @@ def print_abacus(value):
        
        for i in range(0,10):
            print row[:11-int(number[i])] + '   ' +row[11-int(number[i]):11] + '|'
+```
+       num = str(value)
+       while len(num) != 10:
+            num = '0' + num
+       s='|00000*****|'       
+       i=0     
+       while i!=10:
+            j=int(num[i])
+            print s[:11-j]+'   '+s[11-j:]    
+            i=i+1
+```
        
 ###  TEST CASES
 print "Abacus showing 0:"
