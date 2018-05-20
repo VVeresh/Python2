@@ -21,7 +21,7 @@ def get_all_link(page):
     while True:
         url, endpos = get_next_target(page)
         if url:
-            print url
+            links.append(url)
             page = page[endpos:]
         else:
             break
