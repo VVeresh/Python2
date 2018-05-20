@@ -16,7 +16,7 @@ def get_next_target(page):
     url = page[start_quote + 1 : end_quote]
     return url, end_quote
     
-def get_all_link(page):
+def get_all_links(page):
     links = []
     while True:
         url, endpos = get_next_target(page)
@@ -25,4 +25,6 @@ def get_all_link(page):
             page = page[endpos:]
         else:
             break
-print_all_link(page)
+    return links
+    
+print get_all_links(page)
