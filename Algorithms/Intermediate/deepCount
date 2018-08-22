@@ -45,3 +45,13 @@ print deep_count([[[[[[[[1, 2, 3]]]]]]]])
 #>>> 10
 
  
+"""
+Easy way
+deep_count(p):
+    sum = 0
+    for e in p:
+        sum = sum + 1
+        if is_list(e):
+            sum = sum + deep_count(e)
+    return sum    
+"""
