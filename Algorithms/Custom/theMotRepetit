@@ -1,0 +1,29 @@
+#Define the most repetit element in list
+
+def longest_repetition(list):
+    countA = 0
+    countB = 0
+    element = None
+    for i in list:
+        for j in list:
+            if j == i:
+                countA += 1
+        if countA > countB:
+            element = i
+            countB = countA
+        countA = 0
+    return element
+    
+#For example,
+
+print longest_repetition([1, 2, 2, 3, 3, 3, 2, 2, 1])
+# 2
+
+print longest_repetition(['a', 'b', 'b', 'b', 'c', 'd', 'd', 'd'])
+# b
+
+print longest_repetition([1,2,3,4,5])
+# 1
+
+print longest_repetition([])
+# None
