@@ -1,0 +1,4 @@
+def get_games_liked(network,user):
+    if user in network:
+        return network[user]['games']
+	return None
