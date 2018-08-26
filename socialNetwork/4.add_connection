@@ -1,0 +1,6 @@
+def add_connection(network, user_A, user_B):
+    if user_A not in network or user_B not in network:
+        return False
+    if user_B not in network[user_A]['conn']:
+        network[user_A]['conn'].append(user_B)
+	return network
