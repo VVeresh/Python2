@@ -1,0 +1,4 @@
+def get_connections(network, user):
+    if user in network:
+        return network[user]['conn']
+	return None
