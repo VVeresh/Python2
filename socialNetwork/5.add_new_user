@@ -1,0 +1,6 @@
+def add_new_user(network, user, games):
+    if user in network:
+        return network
+    network[user] = {'conn':[],'games':[]}
+    network[user]['games'] = games
+    return network
