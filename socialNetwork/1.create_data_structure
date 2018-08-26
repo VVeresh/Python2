@@ -1,0 +1,23 @@
+def create_data_structure(string_input):
+    infoList = string_input.split(".")
+    for i in range(0,len(infoList)):
+        if infoList[i] == '':
+            infoList = infoList[:i] + infoList[i+1:]
+    
+    network = {}
+            
+    for node in infoList:
+        con = node.find(' is connected to ')
+        game = node.find(' likes to play ')
+        username = node[:node.find(" ")]
+        
+        if username not in network:
+            network[username] = {}
+            
+        if con != -1:
+            connList = node[con+17:].split(', ')
+            network[username]['conn'] = connList
+        if game != -1:
+            gamesList = node[game+15:].split(', ')
+            network[username]['games'] = gamesList
+    return network
