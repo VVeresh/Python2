@@ -1,0 +1,9 @@
+def get_secondary_connections(network, user):
+    if user not in network:
+            return None
+    secConnList = []
+    for node in network[user]['conn']:
+        for connection in network[node]['conn']:
+            if connection not in secConnList:
+                secConnList.append(connection)
+    return secConnList
