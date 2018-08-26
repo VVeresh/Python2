@@ -1,0 +1,8 @@
+def count_common_connections(network, user_A, user_B):
+    if user_A not in network or user_B not in network:
+        return False
+    count = 0
+    for node in network[user_A]['conn']:
+        if node in network[user_B]['conn']:
+            count += 1
+    return count
