@@ -28,3 +28,11 @@ print escape_html('>and > khihih&"""')
 print escape_html('<')
 print escape_html('"')
 print escape_html("&")
+
+
+"""
+# or simply:
+import sgi
+def escape_html(s):
+    return cgi.escape(s, quote = True)
+"""
